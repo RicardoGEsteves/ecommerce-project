@@ -14,61 +14,38 @@ export class Menu extends React.Component {
     super();
 
     this.state = {
-      //   sections: [
-      //     {
-      //       title: 'ADVENTURE',
-      //       imageUrl: './adventure.jpg',
-      //       id: 1
-      //     },
-      //     {
-      //       title: 'ROADTRIP',
-      //       imageUrl: './roadtrip.jpg',
-      //       id: 2
-      //     },
-      //     {
-      //       title: 'VACATION',
-      //       imageUrl: './vacation.jpg',
-      //       id: 3
-      //     },
-      //     {
-      //       title: 'TRIPS',
-      //       imageUrl: './trips.jpg',
-      //       id: 4
-      //     },
-      //     {
-      //       title: 'ACCOMMODATIONS',
-      //       imageUrl: './accommodations.jpg',
-      //       id: 5
-      //     }
-      //   ]
-
       sections: [
         {
           title: 'ADVENTURE',
           imageUrl: image1,
-          id: 1
+          id: 1,
+          linkUrl: 'adventure'
         },
         {
           title: 'ROADTRIP',
           imageUrl: image2,
-          id: 2
+          id: 2,
+          linkUrl: ''
         },
         {
           title: 'VACATION',
           imageUrl: image3,
-          id: 3
+          id: 3,
+          linkUrl: ''
         },
         {
           title: 'TRIPS',
           imageUrl: image4,
           size: 'large',
-          id: 4
+          id: 4,
+          linkUrl: ''
         },
         {
           title: 'ACCOMMODATIONS',
           imageUrl: image5,
           size: 'large',
-          id: 5
+          id: 5,
+          linkUrl: ''
         }
       ]
     };
@@ -76,8 +53,8 @@ export class Menu extends React.Component {
   render() {
     return (
       <div className='menu'>
-        {this.state.sections.map(({ id, title, imageUrl, size }) => (
-          <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+        {this.state.sections.map(({ id, ...otherSectionProps }) => (
+          <MenuItem key={id} {...otherSectionProps} />
         ))}
       </div>
     );
