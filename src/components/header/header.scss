@@ -7,7 +7,7 @@
 
   .logo-container {
     width: 35px;
-    padding: 25px;
+    margin: 25px;
 
     .logo {
       color: #000;
@@ -23,6 +23,7 @@
 
     .option {
       padding: 10px 15px;
+      cursor: pointer;
     }
   }
 }
