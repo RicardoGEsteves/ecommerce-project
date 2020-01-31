@@ -10,8 +10,8 @@ const ShopPreview = ({ title, items }) => {
       <div className='preview'>
         {items
           .filter((item, idx) => idx < 4)
-          .map(({ id, ...otherItemProps }) => (
-            <ShopItem key={id} {...otherItemProps} />
+          .map(item => (
+            <ShopItem key={item.id} item={item} />
           ))}
       </div>
     </div>
