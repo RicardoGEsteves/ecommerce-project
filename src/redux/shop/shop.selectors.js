@@ -1,13 +1,5 @@
 import { createSelector } from 'reselect';
 
-const OFFER_ID_MAP = {
-  adventure: 1,
-  roadtrip: 2,
-  vacations: 3,
-  trips: 4,
-  accommodations: 5
-};
-
 const selectShop = state => state.shop;
 
 export const selectShopItems = createSelector(
@@ -15,7 +7,10 @@ export const selectShopItems = createSelector(
   shop => shop.shopItems
 );
 
+export const selectOffersForPreview = createSelector(
+  [selectShopItems],
+  offers => Object.keys(offers).map(key => offers[key])
+);
+
 export const selectOffer = offerUrlParam =>
-  createSelector([selectShopItems], offers =>
-    offers.find(offer => offer.id === OFFER_ID_MAP[offerUrlParam])
-  );
+  createSelector([selectShopItems], offers => offers[offerUrlParam]);

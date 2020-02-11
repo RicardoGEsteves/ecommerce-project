@@ -1,5 +1,5 @@
-const SHOP_DATA = [
-  {
+const SHOP_DATA = {
+  adventure: {
     id: 1,
     title: 'ADVENTURE',
     routeName: 'adventure',
@@ -60,7 +60,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  roadtrip: {
     id: 2,
     title: 'ROADTRIP',
     routeName: 'roadtrip',
@@ -115,7 +115,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  vacations: {
     id: 3,
     title: 'VACATIONS',
     routeName: 'vacations',
@@ -152,7 +152,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  trips: {
     id: 4,
     title: 'TRIPS',
     routeName: 'trips',
@@ -201,7 +201,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  accommodations: {
     id: 5,
     title: 'ACCOMMODATIONS',
     routeName: 'accommodations',
@@ -244,6 +244,6 @@ const SHOP_DATA = [
       }
     ]
   }
-];
+};
 
 export default SHOP_DATA;
