@@ -1,15 +1,16 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import ShopItem from '../shop-item/ShopItem';
 import './shop-preview.scss';
 
-const ShopPreview = ({ title, items, history, match }) => {
+const ShopPreview = ({ title, items, history, match, routeName }) => {
   return (
     <div className='shop-preview'>
       <h1
         className='title'
         onClick={() => {
-          history.push(`${match.path}/${title.toLowerCase()}`);
+          history.push(`${match.url}/${routeName}`);
         }}
       >
         {title.toUpperCase()}
@@ -25,4 +26,4 @@ const ShopPreview = ({ title, items, history, match }) => {
   );
 };
 
-export default ShopPreview;
+export default withRouter(ShopPreview);

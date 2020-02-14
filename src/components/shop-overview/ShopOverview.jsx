@@ -8,16 +8,11 @@ import { selectOffersForPreview } from '../../redux/shop/shop.selectors';
 
 import './shop-overview.scss';
 
-const ShopOverview = ({ shopItems, history, match }) => {
+const ShopOverview = ({ shopItems }) => {
   return (
     <div className='shop-overview'>
       {shopItems.map(({ id, ...otherShopItemsProps }) => (
-        <ShopPreview
-          key={id}
-          {...otherShopItemsProps}
-          history={history}
-          match={match}
-        />
+        <ShopPreview key={id} {...otherShopItemsProps} />
       ))}
     </div>
   );
