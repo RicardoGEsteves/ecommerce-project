@@ -6,7 +6,8 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import { store, persistor } from './redux/store';
 
-import './index.scss';
+import { GlobalStyles } from './index.styles';
+
 import App from './App';
 
 import * as serviceWorker from './serviceWorker';
@@ -16,6 +17,7 @@ ReactDOM.render(
     <BrowserRouter>
       <PersistGate persistor={persistor}>
         <App />
+        <GlobalStyles />
       </PersistGate>
     </BrowserRouter>
   </Provider>,

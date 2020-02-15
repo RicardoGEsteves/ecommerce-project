@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -9,37 +8,33 @@ import CartDropdown from '../cart-dropdown/CartDropdown';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
-import { ReactComponent as Logo } from '../../assets/logo.svg';
-import './header.scss';
+import {
+  HeaderContainer,
+  LogoContainer,
+  LogoElement,
+  OptionsContainer,
+  OptionDiv,
+  OptionLink
+} from './header.styles';
 
-const header = ({ currentUser, hidden }) => {
+const Header = ({ currentUser, hidden }) => {
   return (
-    <header className='header'>
-      <Link to='/' className='logo-container'>
-        <Logo className='logo' />
-      </Link>
-      <div className='options'>
-        <Link to='/shop' className='option'>
-          SHOP
-        </Link>
-        <Link to='/contacts' className='option'>
-          CONTACTS
-        </Link>
+    <HeaderContainer>
+      <LogoContainer to='/'>
+        <LogoElement />
+      </LogoContainer>
+      <OptionsContainer>
+        <OptionLink to='/shop'>SHOP</OptionLink>
+        <OptionLink to='/contacts'>CONTACTS</OptionLink>
         {currentUser ? (
-          <div className='option' onClick={() => auth.signOut()}>
-            {' '}
-            SIGN OUT{' '}
-          </div>
+          <OptionDiv onClick={() => auth.signOut()}> SIGN OUT </OptionDiv>
         ) : (
-          <Link to='/signin' className='option'>
-            {' '}
-            SIGN IN{' '}
-          </Link>
+          <OptionLink to='/signin'> SIGN IN </OptionLink>
         )}
         <CartIcon />
-      </div>
+      </OptionsContainer>
       {hidden ? null : <CartDropdown />}
-    </header>
+    </HeaderContainer>
   );
 };
 
@@ -48,4 +43,4 @@ const mapStateToProps = createStructuredSelector({
   hidden: selectCartHidden
 });
 
-export default connect(mapStateToProps)(header);
+export default connect(mapStateToProps)(Header);

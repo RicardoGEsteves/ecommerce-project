@@ -1,13 +1,14 @@
 import React from 'react';
 
-import './home.scss';
 import Menu from '../../components/menu/Menu';
+
+import { HomeContainer } from './home.styles';
 
 const Home = () => {
   return (
-    <div className='home'>
+    <HomeContainer>
       <Menu />
-    </div>
+    </HomeContainer>
   );
 };
 

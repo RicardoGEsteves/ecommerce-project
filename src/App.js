@@ -3,19 +3,19 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import './app.scss';
-
 import Home from './pages/home/Home';
 import Shop from './pages/shop/Shop';
 import SignInSignUp from './pages/sign-in-sign-up/SignInSignUp';
 import Checkout from './pages/checkout/Checkout';
 
-import Header from './components/header/header';
+import Header from './components/header/Header';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
+
+import AppContainer from './app.styles';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -45,7 +45,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='app'>
+      <AppContainer>
         <Header />
         <Switch>
           <Route exact path='/' component={Home} />
@@ -59,7 +59,7 @@ class App extends React.Component {
           />
           <Route exact path='/checkout' component={Checkout} />
         </Switch>
-      </div>
+      </AppContainer>
     );
   }
 }
