@@ -6,14 +6,14 @@ import { selectMenuSections } from '../../redux/menu/menu.selectors';
 
 import MenuItem from '../menu-item/MenuItem';
 
-import './menu.scss';
+import { MenuContainer } from './menu.styles';
 
 const Menu = ({ sections }) => (
-  <div className='menu'>
+  <MenuContainer>
     {sections.map(({ id, ...otherSectionProps }) => (
       <MenuItem key={id} {...otherSectionProps} />
     ))}
-  </div>
+  </MenuContainer>
 );
 
 const mapStateToProps = createStructuredSelector({

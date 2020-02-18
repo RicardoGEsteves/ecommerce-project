@@ -6,15 +6,15 @@ import ShopPreview from '../shop-preview/ShopPreview';
 
 import { selectOffersForPreview } from '../../redux/shop/shop.selectors';
 
-import './shop-overview.scss';
+import { ShopOverviewContainer } from './shop-overview.styles';
 
 const ShopOverview = ({ shopItems }) => {
   return (
-    <div className='shop-overview'>
+    <ShopOverviewContainer>
       {shopItems.map(({ id, ...otherShopItemsProps }) => (
         <ShopPreview key={id} {...otherShopItemsProps} />
       ))}
-    </div>
+    </ShopOverviewContainer>
   );
 };
 

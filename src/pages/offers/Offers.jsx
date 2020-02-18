@@ -4,19 +4,23 @@ import { connect } from 'react-redux';
 import ShopItem from '../../components/shop-item/ShopItem';
 import { selectOffer } from '../../redux/shop/shop.selectors';
 
-import './offers.scss';
+import {
+  OffersContainer,
+  OfferTitle,
+  OfferItemsContainer
+} from './offers.styles';
 
 const Offers = ({ offers }) => {
   const { title, items } = offers;
   return (
-    <div className='offers'>
-      <h2> {title} </h2>
-      <div className='items'>
+    <OffersContainer>
+      <OfferTitle> {title} </OfferTitle>
+      <OfferItemsContainer>
         {items.map(item => (
           <ShopItem key={item.id} item={item} />
         ))}
-      </div>
-    </div>
+      </OfferItemsContainer>
+    </OffersContainer>
   );
 };
 

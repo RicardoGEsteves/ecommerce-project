@@ -2,27 +2,31 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 import ShopItem from '../shop-item/ShopItem';
-import './shop-preview.scss';
+
+import {
+  ShopPreviewContainer,
+  TitleContainer,
+  PreviewContainer
+} from './shop-preview.styles';
 
 const ShopPreview = ({ title, items, history, match, routeName }) => {
   return (
-    <div className='shop-preview'>
-      <h1
-        className='title'
+    <ShopPreviewContainer>
+      <TitleContainer
         onClick={() => {
           history.push(`${match.url}/${routeName}`);
         }}
       >
         {title.toUpperCase()}
-      </h1>
-      <div className='preview'>
+      </TitleContainer>
+      <PreviewContainer>
         {items
           .filter((item, idx) => idx < 4)
           .map(item => (
             <ShopItem key={item.id} item={item} />
           ))}
-      </div>
-    </div>
+      </PreviewContainer>
+    </ShopPreviewContainer>
   );
 };
 
