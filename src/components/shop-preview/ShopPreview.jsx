@@ -13,9 +13,7 @@ const ShopPreview = ({ title, items, history, match, routeName }) => {
   return (
     <ShopPreviewContainer>
       <TitleContainer
-        onClick={() => {
-          history.push(`${match.url}/${routeName}`);
-        }}
+        onClick={() => history.push(`${match.path}/${routeName}`)}
       >
         {title.toUpperCase()}
       </TitleContainer>

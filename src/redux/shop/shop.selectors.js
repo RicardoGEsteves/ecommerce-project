@@ -9,8 +9,10 @@ export const selectShopItems = createSelector(
 
 export const selectOffersForPreview = createSelector(
   [selectShopItems],
-  offers => Object.keys(offers).map(key => offers[key])
+  offers => (offers ? Object.keys(offers).map(key => offers[key]) : [])
 );
 
 export const selectOffer = offerUrlParam =>
-  createSelector([selectShopItems], offers => offers[offerUrlParam]);
+  createSelector([selectShopItems], offers =>
+    offers ? offers[offerUrlParam] : null
+  );
