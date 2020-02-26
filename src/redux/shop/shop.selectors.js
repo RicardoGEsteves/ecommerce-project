@@ -16,3 +16,13 @@ export const selectOffer = offerUrlParam =>
   createSelector([selectShopItems], offers =>
     offers ? offers[offerUrlParam] : null
   );
+
+export const selectIsOfferFetching = createSelector(
+  [selectShop],
+  shop => shop.isFetching
+);
+
+export const selectIsOffersLoaded = createSelector(
+  [selectShop],
+  shop => !!shop.shopItems
+);
