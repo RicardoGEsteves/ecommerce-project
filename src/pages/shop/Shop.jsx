@@ -2,16 +2,16 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { fetchOffersStartAsync } from '../../redux/shop/shop.actions';
+import { fetchOffersStart } from '../../redux/shop/shop.actions';
 
 import ShopOverviewContainer from '../../components/shop-overview/ShopOverviewContainer';
 import OffersContainer from '../offers/OffersContainer';
 
 class Shop extends React.Component {
   componentDidMount() {
-    const { fetchOffersStartAsync } = this.props;
+    const { fetchOffersStart } = this.props;
 
-    fetchOffersStartAsync();
+    fetchOffersStart();
   }
   render() {
     const { match } = this.props;
@@ -26,7 +26,7 @@ class Shop extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  fetchOffersStartAsync: () => dispatch(fetchOffersStartAsync())
+  fetchOffersStart: () => dispatch(fetchOffersStart())
 });
 
 export default connect(null, mapDispatchToProps)(Shop);
