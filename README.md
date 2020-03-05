@@ -5,7 +5,7 @@ you can play with it at [Website](https://re-ecommerce-project.herokuapp.com)
 
 ## Technologies involved
 
-**React, Redux, Redux Thunk, reselect, Firebase, Styled-components and Stripe**
+**React, Redux, Redux Saga, reselect, Firebase, Styled-components and Stripe**
 
 <br/>
 
