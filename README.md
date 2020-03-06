@@ -1,7 +1,7 @@
 # Ecommerce Dummy Project
 
 It's a fullstack project based in real life situations.
-you can play with it at [Website](https://re-ecommerce-project.herokuapp.com)
+you can play with it at [Website](https://re-ecommerce.herokuapp.com)
 
 ## Technologies involved
 
