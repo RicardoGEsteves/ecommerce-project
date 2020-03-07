@@ -11,11 +11,11 @@ const StripeButton = ({ price }) => {
     axios({
       url: 'payment',
       method: 'post',
-      data: { amount: priceForStripe, token }
+      data: { amount: priceForStripe, token: token }
     })
       .then(res => alert('Payment Successful'))
       .catch(error => {
-        console.log('Payment Error:', JSON.parse(error));
+        console.log('Payment Error:', error);
         alert(
           'There was an issue with your payment. Please make sure you use the provided credit card'
         );
