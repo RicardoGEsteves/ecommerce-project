@@ -27,6 +27,10 @@ export const AddButton = styled(CustomButton)`
   position: absolute;
   top: 255px;
   display: none;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const BackgroundImage = styled.div`
